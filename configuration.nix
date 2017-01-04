@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ ./hardware.nix
+  imports = [ 
       	      <nixpkgs/nixos/modules/installer/cd-dvd/channel.nix> ];
 
       services.openssh.enable = true;
