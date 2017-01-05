@@ -2,7 +2,9 @@
 
 {
   imports = [ <nixpkgs/nixos/modules/installer/cd-dvd/channel.nix> 
-              ./hardware-configuration.nix ];
+              ./hardware-configuration.nix
+	      ./grub-configuration.nix
+	    ];
 
       services.openssh.enable = true;
       services.openssh.permitRootLogin = "yes";
