@@ -1,8 +1,8 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ 
-      	      <nixpkgs/nixos/modules/installer/cd-dvd/channel.nix> ];
+  imports = [ <nixpkgs/nixos/modules/installer/cd-dvd/channel.nix> 
+              ./hardware-configuration.nix ];
 
       services.openssh.enable = true;
       services.openssh.permitRootLogin = "yes";
