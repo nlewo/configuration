@@ -29,8 +29,7 @@
 	git -C /etc/nixos fetch
         git -C /etc/nixos reset --hard origin/master
 	'';
-	dates = null;
-	period = "1m";
+	dates = "*:0/2";
 	};
 
 }
