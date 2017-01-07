@@ -11,6 +11,11 @@
 
       users.users.root.password = "root";
 
+      users.extraUsers.lewo = {
+         isNormalUser = true;
+         extraGroups = [ "wheel" ];
+      };
+
       system.autoUpgrade = {
         enable = true;
 	channel = "/var/nixpkgs";
