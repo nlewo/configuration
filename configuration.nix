@@ -12,8 +12,6 @@ let
     git -C /etc/nixos init
     git -C /etc/nixos remote add origin https://github.com/nlewo/configuration.git || true
     git -C /etc/nixos pull origin arn
-
-
     ''; 
 in
 {
@@ -28,6 +26,10 @@ in
       users.users.root.password = "root";
 
       users.extraUsers.lewo = {
+         isNormalUser = true;
+         extraGroups = [ "wheel" ];
+      };
+      users.extraUsers.eon = {
          isNormalUser = true;
          extraGroups = [ "wheel" ];
       };
