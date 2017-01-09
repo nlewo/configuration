@@ -11,7 +11,7 @@ let
     mkdir -p /etc/nixos/
     git -C /etc/nixos init
     git -C /etc/nixos remote add origin https://github.com/nlewo/configuration.git || true
-    git -C /var/nixos pull origin arn
+    git -C /etc/nixos pull origin arn
 
 
     ''; 
