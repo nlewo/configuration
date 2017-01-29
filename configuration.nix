@@ -20,11 +20,6 @@ in
 	      ./grub-configuration.nix
 	    ];
 
-      services.openssh.enable = true;
-      services.openssh.permitRootLogin = "yes";
-
-      users.users.root.password = "root";
-
       users.extraUsers.lewo = {
          isNormalUser = true;
          extraGroups = [ "wheel" ];
