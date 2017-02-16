@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
 
 let
   gitPull =
@@ -15,19 +15,18 @@ let
     ''; 
 in
 {
-  imports = [ <nixpkgs/nixos/modules/installer/cd-dvd/channel.nix> 
-              ./hardware-configuration.nix
+  imports = [ ./hardware-configuration.nix
 	      ./grub-configuration.nix
 	    ];
 
-      networking.firewall.allowedTCPPorts = [ 19531 ];
-      services.journald.enableHttpGateway = true;
+  networking.firewall.allowedTCPPorts = [ 19531 ];
+  services.journald.enableHttpGateway = true;
 
-      system.autoUpgrade = {
-        enable = true;
-	flags = [ "-I" "nixpkgs=/var/nixpkgs" ];
-	extraPath = [ pkgs.git ];
-	preRebuild = gitPull;
-	dates = "*:0/2";
-	};
+  system.autoUpgrade = {
+    enable = true;
+    flags = [ "-I" "nixpkgs=/var/nixpkgs" ];
+    extraPath = [ pkgs.git ];
+    preRebuild = gitPull;
+    dates = "*:0/2";
+  };
 }
