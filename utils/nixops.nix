@@ -13,7 +13,7 @@
         '';
     in
     { 
-      imports = [ ./configuration.nix ];
+      imports = [ ../configuration.nix ];
       deployment.targetEnv = "libvirtd";
       deployment.libvirtd.memorySize = 4096;
       deployment.libvirtd.headless = true;

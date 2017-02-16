@@ -1,3 +1,5 @@
+# NIXOS_CONFIG=$PWD/openstack-image.nix nix-build '<nixpkgs/nixos>' -A config.system.build.openstackImage
+
 {config, lib, pkgs, ... }:
 
 with lib;
@@ -15,14 +17,14 @@ let
     '';
 in
 {
-  system.build.novaImage = import <nixpkgs/nixos/lib/make-disk-image.nix> {
+  system.build.openstackImage = import <nixpkgs/nixos/lib/make-disk-image.nix> {
     inherit pkgs lib config;
     partitioned = true;
     diskSize = 1 * 1024;
     format = "qcow2";
     };
 
-  imports = [ <nixpkgs/nixos/modules/virtualisation/nova-image.nix> ./configuration.nix ];
+  imports = [ <nixpkgs/nixos/modules/virtualisation/nova-image.nix> ../configuration.nix ];
 
   # Allow root logins
   services.openssh.enable = true;
