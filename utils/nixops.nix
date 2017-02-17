@@ -13,7 +13,7 @@
         '';
     in
     { 
-      imports = [ ../configuration.nix ];
+      imports = [ ../configuration/configuration.nix ];
       deployment.targetEnv = "libvirtd";
       deployment.libvirtd.memorySize = 4096;
       deployment.libvirtd.headless = true;
@@ -51,4 +51,5 @@
  	${config.system.build.nixos-generate-config}/bin/nixos-generate-config --show-hardware-config > /etc/nixos/hardware-configuration.nix
        '';
      };
+  };
 }
