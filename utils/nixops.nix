@@ -19,16 +19,6 @@
       deployment.libvirtd.headless = true;
       deployment.libvirtd.baseImageSize = 20;
 
-      services.openssh.enable = true;
-      services.openssh.permitRootLogin = "yes";
-
-      networking.firewall.allowedTCPPorts = [ 19531 ];
-      services.journald.enableHttpGateway = true;
-
-      users.extraUsers.lewo = {
-         isNormalUser = true;
-      };
-
      # We create machine dependant files such as grub and hardware
      # configuration.
      systemd.services.nixos-bootstrap = {
