@@ -1,3 +1,5 @@
+# To deploy a libvirt VMs with nixops.
+
 {
   computeNode =
     { config, pkgs, ... }:
