@@ -12,7 +12,7 @@ let
     git -C /var/nixos init
     git -C /var/nixos remote add origin https://github.com/nlewo/configuration.git || true
     git -C /var/nixos pull origin arn
-    ln -sf /var/nixos/configuration/configuration.nix /etc/nixos/configuration.nix
+    cp /var/nixos/configuration/configuration.nix /etc/nixos/configuration.nix
     '';
 in
 {
